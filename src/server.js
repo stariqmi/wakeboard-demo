@@ -5,6 +5,7 @@ const assert = require('assert')
 
 const url = 'mongodb://test:test@ds157258.mlab.com:57258/zipjobs-test'
 
+const port = process.env.PORT || 8080;
 const app = express()
 
 app.use(bodyParser.json())
@@ -23,7 +24,7 @@ MongoClient.connect(url, function(err, db) {
     })
   })
 
-  app.listen(8080, () => {
+  app.listen(port, () => {
     console.log('Listening on 8080')
   })
 })
