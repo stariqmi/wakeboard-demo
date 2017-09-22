@@ -9,7 +9,7 @@ const port = process.env.PORT || 8080;
 const app = express()
 
 app.use(bodyParser.json())
-app.use(express.static('dist'))
+app.use(express.static(__dirname + '/dist'))
 
 
 MongoClient.connect(url, function(err, db) {
@@ -17,7 +17,7 @@ MongoClient.connect(url, function(err, db) {
   console.log("Connected successfully to mongo dbserver")
 
   app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/static/index.html')
+    res.sendFile(__dirname + '/dist/index.html')
   })
 
   app.post('/submission', (req, res) => {
