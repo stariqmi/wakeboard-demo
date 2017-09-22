@@ -16,6 +16,10 @@ MongoClient.connect(url, function(err, db) {
   assert.equal(null, err)
   console.log("Connected successfully to mongo dbserver")
 
+  app.get('/', function(req, res) {
+    res.sendFile('./static/index.html')
+  })
+
   app.post('/submission', (req, res) => {
     const collection = db.collection('submissions')
     collection.insertOne(req.body, (err, r) => {
