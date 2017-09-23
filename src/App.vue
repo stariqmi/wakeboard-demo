@@ -116,6 +116,22 @@ export default {
         .send(payload)
         .then((res) => {
           submit_btn.classList.remove('is-loading')
+          
+          if (res.body.status === 'ok') {
+            // Clear form fields
+            this.zip_home = ''
+            this.zip_current = ''
+            this.zip_previous_1 = ''
+            this.zip_previous_2 = ''
+            this.zip_previous_3 = ''
+            this.zip_previous_4 = ''
+            this.zip_previous_5 = ''
+            this.current_salary = 0
+            this.current_student_loans = 0
+            this.current_rent_mortgage = 0
+            this.number_of_dependents = 0
+            this.gender = 'Male'
+          }
         })
       
     }
