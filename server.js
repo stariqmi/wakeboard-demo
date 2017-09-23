@@ -17,7 +17,8 @@ MongoClient.connect(url, function(err, db) {
   console.log("Connected successfully to mongo dbserver")
 
   app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/static/index.html')
+    res.sendFile('static/index.html' , { root : __dirname});
+    // res.sendFile(__dirname + '/static/index.html')
   })
 
   app.post('/submission', (req, res) => {
