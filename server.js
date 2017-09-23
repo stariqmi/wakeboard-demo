@@ -23,6 +23,8 @@ MongoClient.connect(url, function(err, db) {
   })
 
   app.post('/submission', (req, res) => {
+    console.log('Submission')
+    console.log(req.body)
     const collection = db.collection('submissions')
     collection.insertOne(req.body, (err, r) => {
       if (err || r.insertedCount !== 1) res.send({ status: 'failed' })
