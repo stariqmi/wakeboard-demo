@@ -4,7 +4,7 @@ const path = require('path')
 const MongoClient = require('mongodb').MongoClient
 const assert = require('assert')
 
-const url = 'mongodb://test:test@ds157258.mlab.com:57258/zipjobs-test'
+const url = 'mongodb://zipjobsadmin:Zip10065@zipjobs-shard-00-00-j5kbg.mongodb.net:27017,zipjobs-shard-00-01-j5kbg.mongodb.net:27017,zipjobs-shard-00-02-j5kbg.mongodb.net:27017/test?ssl=true&replicaSet=ZipJobs-shard-0&authSource=admin'
 
 const port = process.env.PORT || 8080;
 const app = express()
